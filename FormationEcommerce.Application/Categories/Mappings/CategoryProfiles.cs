@@ -11,8 +11,6 @@ namespace FormationEcommerce.Application.Categories.Mappings
             CreateMap<Category, CategoryDto>().ReverseMap();
             CreateMap<CreateCategoryDto, Category>();
             CreateMap<UpdateCategoryDto, Category>();
-
         }
     }
-
 }

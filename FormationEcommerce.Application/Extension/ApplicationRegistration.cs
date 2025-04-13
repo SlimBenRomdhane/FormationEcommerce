@@ -1,11 +1,6 @@
-﻿using FormationEcommerce.Core.Interfaces.Repositories;
-using FormationEcommerce.Infrastructure.Persistence.Repositories;
+﻿using FormationEcommerce.Application.Categories.Interfaces;
+using FormationEcommerce.Application.Categories.Services;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FormationEcommerce.Application.Extension
 {
@@ -13,7 +8,7 @@ namespace FormationEcommerce.Application.Extension
     {
         public static IServiceCollection AddApplicationServicesRegistration(this IServiceCollection services)
         {
-            services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<ICategoryService, CategoryService>();
             return services;
         }
     }

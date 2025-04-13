@@ -1,5 +1,5 @@
-using FormationEcommerce.Infrastructure.Extension;
 using FormationEcommerce.Application.Extension;
+using FormationEcommerce.Infrastructure.Extension;
 
 namespace FormationEcommerce.Web
 {
@@ -18,6 +18,7 @@ namespace FormationEcommerce.Web
 
             builder.Services.AddInfrastructureServicesRegistration(builder.Configuration);
             builder.Services.AddApplicationServicesRegistration();
+            builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             var app = builder.Build();
 

@@ -33,7 +33,6 @@ namespace FormationEcommerce.Application.Categories.Services
             }
         }
 
-
         public async Task<CategoryDto> GetCategoryByIdServiceAsync(Guid id)
         {
             var category = await _categoryRepository.GetByIdAsyncGeneric(id);
@@ -53,7 +52,6 @@ namespace FormationEcommerce.Application.Categories.Services
             var categoryId = await _categoryRepository.GetCategoryIdByCategoryNameAsync(categoryName);
             return categoryId;
         }
-
 
         public async Task<IEnumerable<CategoryDto>> GetAllCategoriesServiceAsync()
         {

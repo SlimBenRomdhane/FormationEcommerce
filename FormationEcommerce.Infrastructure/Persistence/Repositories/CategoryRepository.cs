@@ -8,10 +8,12 @@ namespace FormationEcommerce.Infrastructure.Persistence.Repositories
     public class CategoryRepository : Repository<Category>, ICategoryRepository
     {
         private readonly ApplicationDbContext _dbContext;
+
         public CategoryRepository(ApplicationDbContext dbContext) : base(dbContext)
         {
             _dbContext = dbContext;
         }
+
         public async Task<Guid> GetCategoryIdByCategoryNameAsync(string categoryName)
         {
             var category = await _dbContext.Categories.FirstOrDefaultAsync(c => c.Name == categoryName);
@@ -22,5 +24,4 @@ namespace FormationEcommerce.Infrastructure.Persistence.Repositories
             return category.Id;
         }
     }
-
 }
