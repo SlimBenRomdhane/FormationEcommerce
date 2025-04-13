@@ -9,7 +9,6 @@
 	<ItemGroup>
 		<Folder Include="Externals\Mailing\" />
 		<Folder Include="Externals\Payment\" />
-		<Folder Include="Persistence\DbInitializer\" />
 	</ItemGroup>
 
 	<ItemGroup>

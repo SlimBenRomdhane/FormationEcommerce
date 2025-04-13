@@ -18,7 +18,7 @@ namespace FormationEcommerce.Web
 
             builder.Services.AddInfrastructureServicesRegistration(builder.Configuration);
             builder.Services.AddApplicationServicesRegistration();
-            builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
 
             var app = builder.Build();
 

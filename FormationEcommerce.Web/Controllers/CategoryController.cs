@@ -1,4 +1,6 @@
-﻿using FormationEcommerce.Application.Categories.Interfaces;
+﻿using AutoMapper;
+using FormationEcommerce.Application.Categories.Interfaces;
+using FormationEcommerce.Web.Models.Categories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FormationEcommerce.Web.Controllers
@@ -6,13 +8,26 @@ namespace FormationEcommerce.Web.Controllers
     public class CategoryController : Controller
     {
         private readonly ICategoryService _categoryService;
-        public CategoryController(ICategoryService categoryService)
+        private readonly IMapper _mapper;
+        public CategoryController(ICategoryService categoryService, IMapper mapper)
         {
             _categoryService = categoryService;
+            _mapper = mapper;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            try
+            {
+                var resultDto = await _categoryService.GetAllCategoriesServiceAsync();
+                var result = _mapper.Map<IEnumerable<CategoryViewModel>>(resultDto);
+                return View(result);
+            }
+            catch (Exception)
+            {
+                return View("Error Something went wrong when listing the categories");
+                //throw new Exception("Something went wrong when listing the categories");
+            }
+
         }
     }
 }
