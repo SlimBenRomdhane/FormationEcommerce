@@ -1,0 +1,27 @@
+﻿@using FormationEcommerce.Web.Models.Categories;
+@model CreateCategoryViewModel
+
+<h1>This is the create page of category</h1>
+<form asp-action="Create">
+   <div class="row">
+        <div class="col-12">
+            <div class="mb-3">
+                <label asp-for="Name" class="form-label">Category Name</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="mb-3">
+                <label asp-for="Description" class="form-label">Category Description</label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-12 text-end">
+            <button type="submit" class="btn btn-primary">Create Category</button>
+        </div>
+
+   </div>
+
+</form>

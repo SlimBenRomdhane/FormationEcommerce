@@ -9,6 +9,7 @@ namespace FormationEcommerce.Web.Mapping
         public CategoryProfiles()
         {
             CreateMap<CategoryDto, CategoryViewModel>().ReverseMap();
+            CreateMap<CreateCategoryViewModel, CreateCategoryDto>();
         }
     }
 
